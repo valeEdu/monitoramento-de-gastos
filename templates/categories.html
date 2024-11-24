@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Gerenciar Categorias</h2>
+    <form method="POST" class="mb-3">
+        <div class="mb-3">
+            <input type="text" class="form-control" name="nome" placeholder="Nome da Categoria" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Adicionar Categoria</button>
+    </form>
+
+    <ul class="list-group">
+        {% for categoria in categorias %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ categoria.Nome }}  <!-- Altere 'Nome' para a chave correta do seu CSV -->
+                <div>
+                    <a href="{{ url_for('edit_category', category_id=categoria.ID) }}" class="btn btn-warning btn-sm">Editar</a>
+                    <form action="{{ url_for('delete_category', category_id=categoria.ID) }}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Remover</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

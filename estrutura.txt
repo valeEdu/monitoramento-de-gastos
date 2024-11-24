@@ -1,0 +1,8 @@
+finance_app/
+├── app.py                # Arquivo principal do Flask ou Django
+├── models.py             # Modelos de dados (ex: Usuário, Gastos)
+├── forms.py              # Formulários para cadastro e registro de gastos
+├── static/               # Arquivos estáticos (CSS, JS)
+├── templates/            # Templates HTML (se usar Flask)
+├── database.db           # Banco de dados MySql
+└── requirements.txt      # Dependências do projeto
